@@ -22,6 +22,7 @@ class EmailGenerator:
     ):
         # init the api key in OPEN AI
         # This will "log you in" Open AI
+        # You need OPEN_AI_API_KEY in your .env
         openai.api_key = os.environ.get("OPEN_AI_API_KEY")
         self.email_template = email_template
         self.personalization_map = personalization_map
