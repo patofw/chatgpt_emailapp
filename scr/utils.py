@@ -13,7 +13,7 @@ def get_config_params():
     return config
 
 
-def load_inputs(config) -> (str, pd.DataFrame):
+def load_inputs(config) -> tuple:
     """Loads the inputs necessary for the emailapp.
 
     Args:
@@ -21,7 +21,7 @@ def load_inputs(config) -> (str, pd.DataFrame):
 
     Returns:
         email template string and customer dataframe
-        _type_: Tuple[str, pd.DataFrame]
+        tuple: Tuple[str, pd.DataFrame]
     """
     with open(config["template_email_path"], "r") as f:
         email_template = f.read()

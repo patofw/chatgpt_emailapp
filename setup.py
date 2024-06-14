@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-from distutils.core import setup
-from setuptools import find_packages
+from setuptools import setup, find_packages
 # read the contents of your README file
 from os import path
 
@@ -10,8 +8,13 @@ with open(
 ) as f:
     long_description = f.read()
 
-with open("requirements.txt") as f:
-    required = f.read().splitlines()
+required = [
+    "openai",
+    "pandas",
+    "streamlit",
+    "python-dotenv",
+    "PyYAML"
+]
 
 setup(
     name="chatgpt-emailapp",

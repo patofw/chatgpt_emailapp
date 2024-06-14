@@ -12,8 +12,16 @@ This is a simple yet powerful personalised email generator app, powered by OpenA
   Follow the template in `.env_example` but do it in your local `.env` file. 
   
   For questions in how to create and locate your OpenAI api key follow this [link](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key). 
-- Run the python setup file:
-  `python setup.py` 
+- install the `build` package:  ```pip install --upgrade build```
+- install the `setuptools` package: ```pip install --upgrade setuptools```
+
+- Build the Python module:
+  
+  `python -m build`
+  
+  and then
+  
+  `pip install -e .` 
 
 # 2. Context of this repo. 
 
@@ -28,7 +36,7 @@ The app will create a unique personalised email for each client based on some at
 To make it work, simply follow these steps: 
   1. Under the `input` folder, fill out the sample customer list. 
   2. On the same folder, add the `email template`. 
-  3. Head to the `config.yaml` file and set up the correct paths and parameters for the ChatGPT model. You can also set up the OpenAI `engine`. Meaning, what model you want to use. 
+  3. Head to the `config.yaml` file and set up the correct paths and parameters.
   4. Once everything is set, simply run ```streamlit run emailapp.py```
   5. Follow the simple Streamlit's App instructions and generate the personalised emails. The ouputs will be saved on the given path set up in the `config.yaml` 
   6. If you want to add more personalization details simply crete new columns in the input dataset and make sure you add this in the template, following this example: 
